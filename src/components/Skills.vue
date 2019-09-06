@@ -1,12 +1,17 @@
 <template>
   <div class="hello">
-    Skills
+    {{ name}}
   </div>
 </template>
 
 <script>
 export default {
   name: 'Skills',
+  data() {
+    return {
+      name: 'coursetro'
+    }
+  }
   props: {
     
   }
