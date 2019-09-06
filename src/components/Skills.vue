@@ -1,16 +1,14 @@
 <template>
   <div class="hello">
-    {{ name }}
+    sdfsfd
   </div>
 </template>
 
 <script>
 export default {
   name: 'Skills',
-  data() {
-    return {
-      name: 'coursetro'
-    }
+  props: {
+    
   }
 }
 </script>
