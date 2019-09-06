@@ -12,9 +12,6 @@ export default {
       name: 'coursetro'
     }
   }
-  props: {
-    
-  }
 }
 </script>
 
