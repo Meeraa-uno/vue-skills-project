@@ -1,15 +1,17 @@
 <template>
   <div class="container">
       <div class="holder">  
+        
         <form @submit.prevent="addSkill">
-        <input type="text" placeholder="Enter a skill you have.."  v-model="skill">
-        <!-- Add this line -->
-        <input type="checkbox" id="checkbox" v-model="checked">
+          <input type="text" placeholder="Enter a skill you have.." v-validate="'required'" v-model="skill" name="skill">
+          
+        </form>
+
         <ul>
           <li v-for="(data, index) in skills" :key='index'>{{data.skill}}</li>
         </ul>
+
         <p>These are the skills that you possess.</p>       
-    </form>
     </div>
   </div>
 </template>
@@ -18,17 +20,25 @@
 export default {
   name: 'Skills',
   data() {
-    // Removed for brevity
+    return {
+      skill: '',
+      skills: [
+        {"skill": "Vue.js"},
+        {"skill": "ember.js"}
+      ]
+    }
   },
-
   // Add this section:
   methods : {
-      addSkill(){
-          this.skills.push({skill: this.skill});
-          this.skill = '';
+      addSkill() {
+       
+            this.skills.push({skill: this.skill});
+            this.skill = '';
+          
       }
-  }
-}
+    }  
+  } 
+    
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -70,6 +80,13 @@ export default {
     font-size: 1.3em;
     background-color: #323333;
     color: #687F7F;
+  }
+  .alert {
+    background: #fdf2ce;
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px;
+    margin-top: -20px;
   }
 
 </style>
